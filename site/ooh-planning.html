@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOHプランニングアプリ</title>
+    <link rel="stylesheet" href="ooh-planning.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>OOH プランニングツール</h1>
+            <p class="subtitle">屋外広告のプランニングを簡単に</p>
+        </header>
+
+        <div class="planning-area">
+            <div class="input-section">
+                <h2>プランニング条件</h2>
+
+                <div class="form-group">
+                    <label for="mediaType">広告媒体</label>
+                    <select id="mediaType">
+                        <option value="billboard">大型看板</option>
+                        <option value="digital">デジタルサイネージ</option>
+                        <option value="station">駅広告（ポスター）</option>
+                        <option value="bus">バス広告</option>
+                        <option value="taxi">タクシー広告</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="area">エリア</label>
+                    <select id="area">
+                        <option value="shibuya">渋谷・原宿</option>
+                        <option value="shinjuku">新宿</option>
+                        <option value="ginza">銀座・丸の内</option>
+                        <option value="ikebukuro">池袋</option>
+                        <option value="yokohama">横浜</option>
+                        <option value="suburb">郊外エリア</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="period">掲出期間</label>
+                    <select id="period">
+                        <option value="1">1週間</option>
+                        <option value="2">2週間</option>
+                        <option value="4">4週間（1ヶ月）</option>
+                        <option value="8">8週間（2ヶ月）</option>
+                        <option value="12">12週間（3ヶ月）</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">面数</label>
+                    <input type="number" id="quantity" min="1" max="100" value="5">
+                </div>
+
+                <button id="calculateBtn" class="calculate-btn">計算する</button>
+            </div>
+
+            <div class="result-section">
+                <h2>プランニング結果</h2>
+
+                <div class="result-card">
+                    <div class="result-item">
+                        <span class="result-label">総費用</span>
+                        <span class="result-value" id="totalCost">¥0</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="result-label">推定インプレッション</span>
+                        <span class="result-value" id="impressions">0</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="result-label">CPM（千人あたりコスト）</span>
+                        <span class="result-value" id="cpm">¥0</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="result-label">週あたり平均リーチ</span>
+                        <span class="result-value" id="weeklyReach">0人</span>
+                    </div>
+                </div>
+
+                <div class="result-details">
+                    <h3>プラン詳細</h3>
+                    <div id="planDetails"></div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>※ 表示される金額や数値は概算です。実際の金額は媒体社にお問い合わせください。</p>
+        </footer>
+    </div>
+
+    <script src="ooh-planning.js"></script>
+</body>
+</html>
